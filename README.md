@@ -1,1 +1,1 @@
-### My Docker Compose File For Creating Home Server (transmission + minidlna)
+### My Docker Compose File And MiniDLNA Config For Creating Home Server (transmission + minidlna)
