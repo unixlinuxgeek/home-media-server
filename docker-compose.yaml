@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  transmission:
+    image: unixlinuxgeek/transmission
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - /mnt/t1tb/transmission/downloads:/transmission/downloads
+
+
+  minidlna:
+    image: unixlinuxgeek/minidlna
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - /mnt/t1tb/docker/minidlna/minidlna.conf:/etc/minidlna.conf  
+      - /mnt/t1tb/transmission/downloads/1-мультфильмы:/transmission/downloads/cartoons
+      - /mnt/t1tb/transmission/downloads/2-сериалы:/transmission/downloads/tv-series
+      - /mnt/t1tb/transmission/downloads/3-фильмы:/transmission/downloads/movies
+      - /mnt/t1tb/transmission/downloads/5-документальные:/transmission/downloads/doc
+      - /mnt/t1tb/transmission/downloads/TOP-IMDB-MOVIES:/transmission/downloads/best
